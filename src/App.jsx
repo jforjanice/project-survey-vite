@@ -7,4 +7,4 @@ export const App = () => {
       <Header />
       Survey Project test
     </div>
-  
+  )};
