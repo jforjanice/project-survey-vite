@@ -1,3 +1,10 @@
+import { Header } from "./Header.jsx";
+
 export const App = () => {
-  return <div>Survey Project test</div>;
+  return (
+    <div>
+      <Header />
+      Survey Project test
+    </div>
+  );
 };
