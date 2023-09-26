@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export const Questions(props) = () => {
-  return 
+export const Questions = ({ selectedOption, setSelectedOption }) => {
+  return (
   <div>
       <div className="Question1">
         <p>Do you have an insurance for your cat?</p>
@@ -11,7 +11,8 @@ export const Questions(props) = () => {
           <input 
           type="radio" 
           value="Yes" 
-          checked={props.selectedOption === 'Yes'} 
+          checked={selectedOption === 'Yes'} 
+          onChange={() => setSelectedOption('Yes')}
           />
           Yes 
         </label>
@@ -19,11 +20,12 @@ export const Questions(props) = () => {
           <input 
           type="radio" 
           value="No" 
-          checked={props.selectedOption === 'No'} 
+          checked={selectedOption === 'No'} 
+          onChange={() => setSelectedOption('No')}
           />
          No 
         </label>
-      </div>;
+      </div>
      
       <div className="Question2">
         <p>Is your cat castrated?</p>
@@ -33,7 +35,8 @@ export const Questions(props) = () => {
           <input 
           type="radio" 
           value="Yes" 
-          checked={props.selectedOption === 'Yes'} 
+          checked={selectedOption === 'Yes'} 
+          onChange={() => setSelectedOption('Yes')}
           />
           Yes 
         </label>
@@ -41,12 +44,14 @@ export const Questions(props) = () => {
           <input 
           type="radio" 
           value="No" 
-          checked={props.selectedOption === 'No'} 
+          checked={selectedOption === 'No'} 
+          onChange={() => setSelectedOption('No')}
           />
          No 
         </label>
-      </div>;
-      </div>;
+      </div>
+      </div>
+  );
 };
 
 export default Questions;
