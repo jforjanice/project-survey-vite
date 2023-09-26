@@ -8,6 +8,19 @@ export const Questions = () => {
       <label>What is/are your cat(s) name?</label>
       <br />
       <input />
+      <br />
+      <label for="feedTime">
+        How many times do you want your cat to be fed?
+      </label>
+      <br />
+      <select id="feedTime" name="feedTime">
+        <option value="once">Morning </option>
+        <option value="twice"> Morning & Evening</option>
+        <option value="threeTimes">Morning, lunch and evening</option>
+        <option value="fourTimes">
+          Morning, lunch and evening and before sleep
+        </option>
+      </select>
     </div>
   );
 };
