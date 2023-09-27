@@ -8,9 +8,6 @@ export const App = () => {
       <Header />
       <Questions />
       {/* <Summary /> */}
-      <div>
-        <button>Submit</button>
-      </div>
     </div>
   );
 };
