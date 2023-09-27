@@ -1,14 +1,17 @@
 export const Questions = () => {
   return (
     <div>
+      {/* first question */}
       <label>How many cats do you have?</label>
       <br />
       <input />
       <br />
+      {/* second question */}
       <label>What is/are your cat(s) name?</label>
       <br />
       <input />
       <br />
+      {/* third question */}
       <label for="feedTime">
         How many times do you want your cat to be fed?
       </label>
