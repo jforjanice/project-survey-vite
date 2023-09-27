@@ -1,5 +1,10 @@
 import React from "react";
-import Questions from "./Questions";
+import { Header } from "./Header.jsx";
+import { Name } from "./question comp/Name";
+import { Number } from "./question comp/Number";
+import { FeedTime } from "./question comp/FeedTime";
+import { Insurance } from "./question comp/Insurance";
+import { Castrated } from "./question comp/Castrated";
 
 export const Summary = () => {
   return <div>Summary</div>;
