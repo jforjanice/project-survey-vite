@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 
-export const Name = () => {
+export const Name = ({ updateAnswer }) => {
+  const handleChange = (event) => {
+    updateAnswer('name', event.target.value);
+  };
   return (
     <div className="Question2">
       <label className="catName">What is/are your cat(s) name?</label>
       <br />
-      <input type="name" />
+      <input type="name" id="name" onChange={handleChange} />
     </div>
 
   );
