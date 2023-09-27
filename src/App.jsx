@@ -7,7 +7,10 @@ export const App = () => {
     <div>
       <Header />
       <Questions />
-      <Summary />
+      {/* <Summary /> */}
+      <div>
+        <button>Submit</button>
+      </div>
     </div>
   );
 };
