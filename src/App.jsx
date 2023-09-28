@@ -7,6 +7,7 @@ import { Insurance } from "./question comp/Insurance";
 import { Castrated } from "./question comp/Castrated";
 import { Summary } from "./Summary.jsx";
 
+
 export const App = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   
@@ -40,7 +41,9 @@ export const App = () => {
       {isSubmitted ? (
           <Summary answers={answers}/>
       ) : (
+        <div className="button">
         <button onClick={handleSubmit}>Submit</button>
+        </div>
       )}
     </div>
   );

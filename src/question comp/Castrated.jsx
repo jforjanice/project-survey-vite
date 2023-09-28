@@ -10,7 +10,7 @@ export const Castrated = ({ updateAnswer }) => {
     updateAnswer('castrated', value)
   };
   return (
-    <div className="Question5">
+    <div className="question5">
         <p>Is your cat castrated?</p>
       <div className="Answers5">
         <label>

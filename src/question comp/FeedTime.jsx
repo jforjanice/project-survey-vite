@@ -5,7 +5,7 @@ export const FeedTime = ({ updateAnswer }) => {
     updateAnswer('feedtime', event.target.value);
   }
   return (
-    <div className="Question3">
+    <div className="question3">
       <label className="feedTime">How many times do you want your cat to be fed?</label>
       <br />
       <div className="Answers3">

@@ -5,7 +5,7 @@ export const Name = ({ updateAnswer }) => {
     updateAnswer('name', event.target.value);
   };
   return (
-    <div className="Question2">
+    <div className="question1">
       <label className="catName">What is/are your cat(s) name?</label>
       <br />
       <input type="name" id="name" onChange={handleChange} />

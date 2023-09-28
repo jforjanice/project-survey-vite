@@ -10,7 +10,7 @@ export const Insurance = ({ updateAnswer }) => {
     updateAnswer('insurance', value)
   };
   return (
-    <div className="Question4">
+    <div className="question4">
         <p>Do you have an insurance for your cat?</p>
         <div className="Answers5">
         <label>
