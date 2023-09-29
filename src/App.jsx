@@ -10,36 +10,36 @@ import { Summary } from "./Summary.jsx";
 
 export const App = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  
+
   const [answers, setAnswers] = useState({
-    name: '',
-    number: '',
-    feedtime: '',
-    insurance: '',
-    castrated: '',
-    });
-    
-    const updateAnswer = (question, answer) => {
-      setAnswers((prevAnswers) => ({
-        ...prevAnswers,
-        [question]: answer,
-      }));
-    };
+    name: "",
+    number: "",
+    feedtime: "",
+    insurance: "",
+    castrated: "",
+  });
+
+  const updateAnswer = (question, answer) => {
+    setAnswers((prevAnswers) => ({
+      ...prevAnswers,
+      [question]: answer,
+    }));
+  };
+
   const handleSubmit = () => {
     setIsSubmitted(true);
   };
 
-
   return (
     <div>
       <Header updateAnswer={updateAnswer} />
-      <Name updateAnswer={updateAnswer}/>
-      <Number updateAnswer={updateAnswer}/>
-      <FeedTime updateAnswer={updateAnswer}/>
-      <Insurance updateAnswer={updateAnswer}/>
-      <Castrated updateAnswer={updateAnswer}/>
+      <Name updateAnswer={updateAnswer} />
+      <Number updateAnswer={updateAnswer} />
+      <FeedTime updateAnswer={updateAnswer} />
+      <Insurance updateAnswer={updateAnswer} />
+      <Castrated updateAnswer={updateAnswer} />
       {isSubmitted ? (
-          <Summary answers={answers}/>
+        <Summary answers={answers} />
       ) : (
         <div className="button">
         <button onClick={handleSubmit}>Submit</button>
@@ -48,4 +48,3 @@ export const App = () => {
     </div>
   );
 };
-

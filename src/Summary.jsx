@@ -8,7 +8,7 @@ import { Castrated } from "./question comp/Castrated";
 
 export const Summary = ({ answers }) => {
   return (
-    <div className="Summary">
+    <div className="summary">
       <h2>Thank you for your answers, this is the information you provided:</h2>
       <p>Name: {answers.name}</p>
       <p>Number of cats: {answers.number}</p>
@@ -17,7 +17,4 @@ export const Summary = ({ answers }) => {
       <p>Castrated: {answers.castrated}</p>
     </div>
   );
-  };
-
-
-
+};
