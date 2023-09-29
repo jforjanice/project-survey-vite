@@ -25,11 +25,8 @@ export const App = () => {
     }));
   };
 
-  // const [showSummary, setShowSummary] = useState(false);
-
   const handleSubmit = () => {
     setIsSubmitted(true);
-    // setShowSummary(true);
   };
 
   return (
