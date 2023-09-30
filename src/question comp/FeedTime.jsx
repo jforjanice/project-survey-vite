@@ -1,31 +1,41 @@
-import React, { useState } from "react";
+const options = [
+  { value: "Morning", label: "Morning" },
+  { value: "Morning & evening", label: "Morning & evening" },
+  {
+    value: "Morning, lunch and evenings",
+    label: "Morning, lunch and evenings",
+  },
+  {
+    value: "Morning, lunch and evening and before sleep",
+    label: "Morning, lunch and evening and before sleep",
+  },
+];
 
-export const FeedTime = ({ updateAnswer }) => {
+export const defaultValue = options[0].value;
+
+export const FeedTime = ({ updateAnswer, selectedFeedtime }) => {
   const handleChange = (event) => {
-    updateAnswer("feedtime", event.target.value);
+    const value = event.target.value;
+    updateAnswer("feedtime", value);
   };
+
   return (
     <div className="question3">
       <label className="feedTime">
         How many times do you want your cat to be fed?
       </label>
       <br />
-      <div className="Answers3">
-        <select
-          className="feedTimeSelect"
-          id="feedtime"
-          onChange={handleChange}
-        >
-          <option value="Morning">Morning </option>
-          <option value="Morning & evening"> Morning & evening</option>
-          <option value="Morning, lunch and evenings">
-            Morning, lunch and evening
+      <select
+        value={selectedFeedtime}
+        className="feedTimeSelect"
+        onChange={handleChange}
+      >
+        {options.map((o) => (
+          <option key={o.value} value={o.value}>
+            {o.label}
           </option>
-          <option value="Morning, lunch and evening and before sleep">
-            Morning, lunch and evening and before sleep
-          </option>
-        </select>
-      </div>
+        ))}
+      </select>
     </div>
   );
 };

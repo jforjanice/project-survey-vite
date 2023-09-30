@@ -2,18 +2,17 @@ import { useState } from "react";
 import { Header } from "./Header.jsx";
 import { Name } from "./question comp/Name";
 import { Number } from "./question comp/Number";
-import { FeedTime } from "./question comp/FeedTime";
+import { FeedTime, defaultValue } from "./question comp/FeedTime";
 import { Insurance } from "./question comp/Insurance";
 import { Castrated } from "./question comp/Castrated";
 import { Summary } from "./Summary.jsx";
 
 export const App = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-
   const [answers, setAnswers] = useState({
     name: "",
     number: "",
-    feedtime: "",
+    feedtime: defaultValue,
     insurance: "",
     castrated: "",
   });
@@ -34,16 +33,27 @@ export const App = () => {
       <Header updateAnswer={updateAnswer} />
       <Name updateAnswer={updateAnswer} />
       <Number updateAnswer={updateAnswer} />
-      <FeedTime updateAnswer={updateAnswer} />
-      <Insurance updateAnswer={updateAnswer} />
-      <Castrated updateAnswer={updateAnswer} />
+      <FeedTime
+        selectedFeedtime={answers.feedtime}
+        updateAnswer={updateAnswer}
+      />
+      <Insurance
+        selectedInsurance={answers.insurance}
+        updateAnswer={updateAnswer}
+      />
+      <Castrated
+        selectedCastrated={answers.castrated}
+        updateAnswer={updateAnswer}
+      />
       {isSubmitted ? (
         <div>
           <Summary answers={answers} />
         </div>
       ) : (
         <div className="button">
-          <button onClick={handleSubmit}>Submit</button>
+          <button type="submit" onClick={handleSubmit}>
+            Submit
+          </button>
         </div>
       )}
     </div>

@@ -1,24 +1,21 @@
 import React, { useState } from "react";
 
-export const Castrated = ({ updateAnswer }) => {
-  const [selectedOption, setSelectedOption] = useState ("No")
-  
-  
+export const defaultCastrated = "No";
+export const Castrated = ({ updateAnswer, selectedCastrated }) => {
   const handleOptionChange = (event) => {
     const value = event.target.value;
-    setSelectedOption(value);
-    updateAnswer('castrated', value)
+    updateAnswer("castrated", value);
   };
   return (
     <div className="question5">
-        <p>Is your cat castrated?</p>
+      <p>Is your cat castrated?</p>
       <div className="Answers5">
         <label>
           <input
             type="radio"
             id="castrated-yes"
             value="Yes"
-            checked={selectedOption === "Yes"}
+            checked={selectedCastrated === "Yes"}
             onChange={handleOptionChange}
           />
           Yes
@@ -28,7 +25,7 @@ export const Castrated = ({ updateAnswer }) => {
             type="radio"
             id="castrated-no"
             value="No"
-            checked={selectedOption === "No"}
+            checked={selectedCastrated === "No"}
             onChange={handleOptionChange}
           />
           No

@@ -1,24 +1,21 @@
 import React, { useState } from "react";
 
-export const Insurance = ({ updateAnswer }) => {
-  const [selectedOption, setSelectedOption] = useState ("No");
-
-
+export const Insurance = ({ updateAnswer, selectedInsurance }) => {
   const handleOptionChange = (event) => {
     const value = event.target.value;
-    setSelectedOption(value);
-    updateAnswer('insurance', value)
+    updateAnswer("insurance", value);
   };
+
   return (
     <div className="question4">
-        <p>Do you have an insurance for your cat?</p>
-        <div className="Answers5">
+      <p>Do you have an insurance for your cat?</p>
+      <div className="Answers5">
         <label>
           <input
             type="radio"
             id="insurance-yes"
             value="Yes"
-            checked={selectedOption === "Yes"}
+            checked={selectedInsurance === "Yes"}
             onChange={handleOptionChange}
           />
           Yes
@@ -28,12 +25,12 @@ export const Insurance = ({ updateAnswer }) => {
             type="radio"
             id="insurance-no"
             value="No"
-            checked={selectedOption === "No"}
+            checked={selectedInsurance === "No"}
             onChange={handleOptionChange}
           />
           No
         </label>
       </div>
-      </div>
+    </div>
   );
 };

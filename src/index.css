@@ -87,6 +87,10 @@ body {
   color: white;
 }
 
+.feedTimeSelect {
+  color: black;
+}
+
 .button {
   display: flex;
   flex-direction: column;
