@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 export const Number = ({ updateAnswer }) => {
   const handleChange = (event) => {
     updateAnswer("number", event.target.value);

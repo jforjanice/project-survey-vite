@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 export const Insurance = ({ updateAnswer, selectedInsurance }) => {
   const handleOptionChange = (event) => {
     const value = event.target.value;
