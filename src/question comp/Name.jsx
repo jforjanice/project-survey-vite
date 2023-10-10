@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export const Name = ({ updateAnswer }) => {
   const handleChange = (event) => {
-    updateAnswer('name', event.target.value);
+    updateAnswer("name", event.target.value);
   };
   return (
     <div className="question1">
@@ -10,7 +10,6 @@ export const Name = ({ updateAnswer }) => {
       <br />
       <input type="name" id="name" onChange={handleChange} />
     </div>
-
   );
 };
 export default Name;

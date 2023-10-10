@@ -9,6 +9,7 @@ import { Summary } from "./Summary.jsx";
 
 export const App = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [show, setShow] = useState(true);
   const [answers, setAnswers] = useState({
     name: "",
     number: "",
@@ -28,30 +29,44 @@ export const App = () => {
     setIsSubmitted(true);
   };
 
+  const hideQuestion = () => {
+    setShow(!show);
+  };
+
+  const handleButtonClick = () => {
+    handleSubmit();
+    hideQuestion();
+  };
+
   return (
     <div>
-      <Header updateAnswer={updateAnswer} />
-      <Name updateAnswer={updateAnswer} />
-      <Number updateAnswer={updateAnswer} />
-      <FeedTime
-        selectedFeedtime={answers.feedtime}
-        updateAnswer={updateAnswer}
-      />
-      <Insurance
-        selectedInsurance={answers.insurance}
-        updateAnswer={updateAnswer}
-      />
-      <Castrated
-        selectedCastrated={answers.castrated}
-        updateAnswer={updateAnswer}
-      />
+      {show && (
+        <div>
+          <Header />
+          <Name updateAnswer={updateAnswer} />
+          <Number updateAnswer={updateAnswer} />
+          <FeedTime
+            selectedFeedtime={answers.feedtime}
+            updateAnswer={updateAnswer}
+          />
+          <Insurance
+            selectedInsurance={answers.insurance}
+            updateAnswer={updateAnswer}
+          />
+          <Castrated
+            selectedCastrated={answers.castrated}
+            updateAnswer={updateAnswer}
+          />
+        </div>
+      )}
+
       {isSubmitted ? (
         <div>
           <Summary answers={answers} />
         </div>
       ) : (
         <div className="button">
-          <button type="submit" onClick={handleSubmit}>
+          <button type="submit" onClick={handleButtonClick}>
             Submit
           </button>
         </div>

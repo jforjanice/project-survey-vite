@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 export const defaultCastrated = "No";
 export const Castrated = ({ updateAnswer, selectedCastrated }) => {
   const handleOptionChange = (event) => {
