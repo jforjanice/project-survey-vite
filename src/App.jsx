@@ -41,7 +41,7 @@ export const App = () => {
   return (
     <div>
       {show && (
-        <div className="question-list">
+        <div>
           <Header />
           <Name updateAnswer={updateAnswer} />
           <Number updateAnswer={updateAnswer} />
